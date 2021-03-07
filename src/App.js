@@ -5,10 +5,10 @@ import HeaderComponent from "./components/header/HeaderComponent";
 export default function App() {
   return (
     <MuiThemeProvider>
-      <div className="root">
+      <div className="app">
         <div className="section header-section">
           <div className="section-container header-component">
-            <HeaderComponent></HeaderComponent>
+            <HeaderComponent />
           </div>
         </div>
       </div>
