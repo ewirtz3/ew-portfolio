@@ -23,5 +23,5 @@ module.exports = {
     path: path.resolve(__dirname, "./build"),
   },
   module: { rules },
-  plugins: [new HTMLplugin({ template: "./public.index.html" })],
+  plugins: [new HTMLplugin({ template: "./public/index.html" })],
 };
