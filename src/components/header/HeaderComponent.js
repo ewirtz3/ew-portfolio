@@ -22,7 +22,7 @@ class HeaderComponent extends Component {
   }
 
   async componentDidMount() {
-    console.log("header mounted");
+    console.log(this.props);
     window.addEventListener("resize", this.updateDimensions.bind(this));
     this.updateDimensions();
   }
@@ -48,7 +48,7 @@ class HeaderComponent extends Component {
         <div className="scroll-down-btn">
           <Fab
             size="small"
-            color="primary"
+            color="secondary"
             onClick={this.onScrollToIntro.bind(this)}
           >
             <KeyboardArrowDownIcon />

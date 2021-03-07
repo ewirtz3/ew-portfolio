@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  overflow-x: hidden;
+  color: #212121 !important;
+}
+
+h3 {
+  font-weight: 300;
+}
+
+h6 {
+  font-weight: 500;
+}
+
+p,
+span {
+  font-weight: 300;
+}
+
+p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.section {
+  padding-left: 5%;
+  padding-right: 5%;
+  position: relative;
+}
+
+.section-container {
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+
+.section-container.header-component {
+  padding: 0;
+}
+
+.header-section {
+  background: linear-gradient(45deg, #a03ed8, #a1fff2);
+}
