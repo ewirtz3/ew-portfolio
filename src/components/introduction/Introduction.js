@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import "./introduction.css";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
-import profilePic from "./profilePic.png";
-import { CenterFocusStrong } from "@material-ui/icons";
+import profilePic from "./oslPic.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,8 +13,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   large: {
-    width: theme.spacing(24),
-    height: theme.spacing(24),
+    width: "300px",
+    height: "500px",
+    borderRadius: "100px",
   },
 }));
 
@@ -25,7 +25,7 @@ export default function Introduction() {
   return (
     <div className="introduction">
       <div className={classes.root}>
-        <Avatar src={profilePic} alt="emily wirtz" className={classes.large} />
+        <img src={profilePic} alt="emily wirtz" className={classes.large} />
       </div>
       <p className="introduction-text">
         Traveler, puzzle builder, Spotify playlist maker.
