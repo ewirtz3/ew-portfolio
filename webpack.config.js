@@ -14,6 +14,20 @@ const rules = [
     exclude: /node_modules/,
     use: ["style-loader", "css-loader"],
   },
+  {
+    test: /\.(gif|png|jpe?g|svg)$/i,
+    exclude: /node_modules/,
+    use: [
+      "file-loader",
+      {
+        loader: "image-webpack-loader",
+        options: {
+          bypassOnDebug: true,
+          disable: true,
+        },
+      },
+    ],
+  },
 ];
 
 module.exports = {

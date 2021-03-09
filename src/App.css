@@ -46,3 +46,7 @@ p {
 .header-section {
   background: linear-gradient(45deg, #a03ed8, #a1fff2);
 }
+
+.section.tinted {
+  background: linear-gradient(45deg, #36a68f, #a1fff2);
+}
