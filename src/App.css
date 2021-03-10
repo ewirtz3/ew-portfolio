@@ -50,3 +50,7 @@ p {
 .section.tinted {
   background: linear-gradient(45deg, #36a68f, #a1fff2);
 }
+
+.section.tinted2 {
+  background: linear-gradient(45deg, #6c00a6, #d570ff);
+}

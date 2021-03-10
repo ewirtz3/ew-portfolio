@@ -37,7 +37,7 @@ export default function App() {
             <Introduction />
           </div>
         </div>
-        <div className="section">
+        <div className="section tinted2">
           <div className="section-container">
             <WorkExperience />
           </div>
