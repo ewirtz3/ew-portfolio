@@ -3,6 +3,7 @@ import MuiThemeProvider from "@material-ui/styles/ThemeProvider/ThemeProvider";
 import { createMuiTheme } from "@material-ui/core/styles";
 import HeaderComponent from "./components/header/HeaderComponent";
 import Introduction from "./components/introduction/Introduction";
+import WorkExperience from "./components/experience/WorkExperience";
 import "./App.css";
 
 const theme = createMuiTheme({
@@ -34,6 +35,11 @@ export default function App() {
         <div className="section tinted">
           <div className="section-container">
             <Introduction />
+          </div>
+        </div>
+        <div className="section">
+          <div className="section-container">
+            <WorkExperience />
           </div>
         </div>
       </div>
