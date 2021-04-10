@@ -4,6 +4,7 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import HeaderComponent from "./components/header/HeaderComponent";
 import Introduction from "./components/introduction/Introduction";
 import WorkExperience from "./components/experience/WorkExperience";
+import Projects from "./components/projects/Projects";
 import "./App.css";
 
 const theme = createMuiTheme({
@@ -41,6 +42,9 @@ export default function App() {
           <div className="section-container">
             <WorkExperience />
           </div>
+        </div>
+        <div className="section header-section">
+          <Projects />
         </div>
       </div>
     </MuiThemeProvider>

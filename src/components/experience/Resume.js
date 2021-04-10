@@ -93,8 +93,8 @@ export default function Resume() {
     <>
       {resume.map((role, i) => {
         return (
-          <div className="timeline-entry">
-            <Card className="role-card" variant="outlined" key={i}>
+          <div className="timeline-entry" key={i}>
+            <Card className="role-card" variant="outlined">
               <CardHeader title={role.title} subheader={role.company} />
               <CardActions disableSpacing>
                 <IconButton
