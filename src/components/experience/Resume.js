@@ -1,18 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
   CardActions,
-  Button,
+  IconButton,
   CardHeader,
   List,
   ListItem,
   Icon,
   ListItemText,
   Chip,
+  makeStyles,
+  Collapse,
 } from "@material-ui/core";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import clsx from "clsx";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    "& > *": {
+      margin: theme.spacing(0.5),
+    },
+  },
+  expand: {
+    transform: "rotate(0deg)",
+    marginLeft: "auto",
+    transition: theme.transitions.create("transform", {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: "rotate(180deg)",
+  },
+}));
 
 export default function Resume(props) {
+  const classes = useStyles();
+  const [expanded, setExpanded] = useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
   const resume = [
     {
       title: "Corporate Services Coordinator",
@@ -62,31 +94,45 @@ export default function Resume(props) {
       {resume.map((role, i) => {
         return (
           <div className="timeline-entry">
-            <Card key={i}>
+            <Card className="role-card" variant="outlined" key={i}>
               <CardHeader title={role.title} subheader={role.company} />
-              <CardContent>
-                {role.dates}
-                <br />
-                {role.location}
-                <br />
-                <div className="role-description">
-                  <List>
-                    {role.responsibilities.map((duty, i) => {
-                      return (
-                        <ListItem key={i}>
-                          <Icon className="far fa-star" />
-                          <ListItemText primary={duty} />
-                        </ListItem>
-                      );
-                    })}
-                  </List>
-                </div>
-                <div className="role-skills">
-                  {role.skills.map((skill, i) => {
-                    return <Chip size="small" label={skill} />;
+              <CardActions disableSpacing>
+                <IconButton
+                  className={clsx(classes.expand, {
+                    [classes.expandOpen]: expanded,
                   })}
-                </div>
-              </CardContent>
+                  onClick={handleExpandClick}
+                  aria-expanded={expanded}
+                  aria-label="show more"
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+              </CardActions>
+              <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                  {role.dates}
+                  <br />
+                  {role.location}
+                  <br />
+                  <div className="role-description">
+                    <List>
+                      {role.responsibilities.map((duty, j) => {
+                        return (
+                          <ListItem key={j}>
+                            <Icon className="fas fa-angle-right" />
+                            <ListItemText primary={duty} />
+                          </ListItem>
+                        );
+                      })}
+                    </List>
+                  </div>
+                  <div className={classes.root}>
+                    {role.skills.map((skill, k) => {
+                      return <Chip size="small" label={skill} key={k} />;
+                    })}
+                  </div>
+                </CardContent>
+              </Collapse>
             </Card>
           </div>
         );
