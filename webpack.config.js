@@ -28,6 +28,18 @@ const rules = [
       },
     ],
   },
+  {
+    test: /\.pdf$/,
+    exclude: /node_modules/,
+    use: [
+      {
+        loader: "file-loader",
+        options: {
+          name: "[name].[ext]",
+        },
+      },
+    ],
+  },
 ];
 
 module.exports = {

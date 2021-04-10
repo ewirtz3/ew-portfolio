@@ -1,5 +1,6 @@
 .experience p.section-title {
   margin-top: 0;
+  margin-bottom: 10px;
   text-align: center;
   color: white;
   font-size: 2rem;
@@ -16,7 +17,7 @@
 }
 
 .role-card {
-  margin: 10px auto;
+  margin: 15px auto;
 }
 
 .fas {

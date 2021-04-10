@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Resume(props) {
+export default function Resume() {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
 
