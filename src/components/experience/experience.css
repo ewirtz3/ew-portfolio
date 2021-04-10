@@ -2,4 +2,9 @@
   margin-top: 0;
   text-align: center;
   color: white;
+  font-size: 2rem;
+}
+
+.timeline-entry {
+  width: 45vh;
 }

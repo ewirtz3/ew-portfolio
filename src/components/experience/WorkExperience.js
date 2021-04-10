@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardContent, CardActions, Button } from "@material-ui/core";
+import Resume from "./Resume";
 import "./experience.css";
 
 class WorkExperience extends Component {
@@ -12,10 +12,18 @@ class WorkExperience extends Component {
     };
   }
 
+  handleExpandChange(entry) {
+    this.setState({ entry: entry });
+  }
+
   render() {
     return (
       <div className="experience">
         <p className="section-title">Work Experience</p>
+        <Resume
+          expanded={this.state}
+          onExpandChange={this.handleExpandChange}
+        />
       </div>
     );
   }
