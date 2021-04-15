@@ -44,7 +44,7 @@ const useStyles = makeStyles({
     fontFamily: ["Ubuntu", "sans-serif"],
   },
   grid: {
-    marginTop: "15px auto",
+    margin: "15px auto",
   },
 });
 
