@@ -5,6 +5,7 @@ import Header from "./components/header/Header";
 import Introduction from "./components/introduction/Introduction";
 import WorkExperience from "./components/experience/WorkExperience";
 import Projects from "./components/projects/Projects";
+import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import "./App.css";
 
@@ -46,6 +47,11 @@ export default function App() {
         </div>
         <div className="section header-section" id="PROJECTS">
           <Projects />
+        </div>
+        <div className="section tinted" id="CONTACT">
+          <div className="section-container">
+            <Contact />
+          </div>
         </div>
         <div className="section tinted2" id="FOOTER">
           <div className="section-container">

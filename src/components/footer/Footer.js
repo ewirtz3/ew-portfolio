@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Button, List } from "@material-ui/core";
+import { Button, Icon } from "@material-ui/core";
 const scrollTo = require("scroll-to");
 import "./Footer.css";
 
@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexWrap: "row wrap",
     justifyContent: "center",
+    width: "100%",
   },
   socials: {
     display: "flex",
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toTop: {
     color: "white",
-    minWidth: "50px",
+    margin: theme.spacing(3),
   },
 }));
 
@@ -65,21 +66,23 @@ export default function Footer() {
 
   return (
     <footer className={classes.root}>
-      <Button
-        href="#TOP"
-        color="inherit"
-        className={classes.toTop}
-        onClick={onScrollToTop}
-      >
-        Back to top<i className="fas fa-chevron-up fa-2x"></i>
-      </Button>
-      <List className={classes.socials}>
+      <div className={classes.socials}>
+        <Button
+          href="#TOP"
+          color="inherit"
+          onClick={onScrollToTop}
+          className={classes.toTop}
+        >
+          Back to top
+          <Icon className="fas fa-chevron-up fa-2x"></Icon>
+        </Button>
         {socials.map((site, i) => {
           return (
             <Button
               key={i}
               onMouseEnter={toggleHover}
               onMouseLeave={toggleHover}
+              variant="text"
             >
               <span className={hovered ? classes.show : classes.hide}>
                 <a href={site.href} target="_blank">
@@ -88,14 +91,14 @@ export default function Footer() {
               </span>
 
               <span className={hovered ? classes.hide : classes.show}>
-                <i className={site.hoverIcon}>
+                <Icon className={site.hoverIcon}>
                   <a href={site.href} target="_blank"></a>
-                </i>
+                </Icon>
               </span>
             </Button>
           );
         })}
-      </List>
+      </div>
     </footer>
   );
 }
