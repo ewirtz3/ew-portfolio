@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
   hide: {
     display: "none",
   },
+  toTop: {
+    color: "white",
+    minWidth: "50px",
+  },
 }));
 
 export default function Footer() {
@@ -61,8 +65,13 @@ export default function Footer() {
 
   return (
     <footer className={classes.root}>
-      <Button href="#TOP" color="inherit" onClick={onScrollToTop}>
-        Back to top ^
+      <Button
+        href="#TOP"
+        color="inherit"
+        className={classes.toTop}
+        onClick={onScrollToTop}
+      >
+        Back to top<i className="fas fa-chevron-up fa-2x"></i>
       </Button>
       <List className={classes.socials}>
         {socials.map((site, i) => {
@@ -72,13 +81,13 @@ export default function Footer() {
               onMouseEnter={toggleHover}
               onMouseLeave={toggleHover}
             >
-              <span className={hovered ? classes.hide : classes.show}>
+              <span className={hovered ? classes.show : classes.hide}>
                 <a href={site.href} target="_blank">
                   {site.name}
                 </a>
               </span>
 
-              <span className={hovered ? classes.show : classes.hide}>
+              <span className={hovered ? classes.hide : classes.show}>
                 <i className={site.hoverIcon}>
                   <a href={site.href} target="_blank"></a>
                 </i>

@@ -9,3 +9,7 @@ a.link:hover {
 a.link:hover + .logo {
   display: "block";
 } */
+
+.fa-chevron-up {
+  margin-left: "15px";
+}
