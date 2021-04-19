@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Button, List, ListItem } from "@material-ui/core";
+import { Button, List } from "@material-ui/core";
 const scrollTo = require("scroll-to");
+import "./Footer.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,27 +18,35 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "row wrap",
     justifyContent: "center",
   },
+  show: {
+    display: "inline-block",
+  },
+  hide: {
+    display: "none",
+  },
 }));
 
 export default function Footer() {
+  const [hovered, setHovered] = useState(false);
+  const toggleHover = () => setHovered(!hovered);
   const classes = useStyles();
 
   const socials = [
     {
       name: "GitHub",
-      hoverIcon: "",
+      hoverIcon: "fab fa-github",
       hoverColor: "",
       href: "https://github.com/ewirtz3",
     },
     {
       name: "LinkedIn",
-      hoverIcon: "",
+      hoverIcon: "fab fa-linkedin-in",
       hoverColor: "",
       href: "https://www.linkedin.com/in/emily-wirtz",
     },
     {
       name: "Twitter",
-      hoverIcon: "",
+      hoverIcon: "fab fa-twitter",
       hoverColor: "",
       href: "https://twitter.com/emdotwirtz",
     },
@@ -58,11 +67,23 @@ export default function Footer() {
       <List className={classes.socials}>
         {socials.map((site, i) => {
           return (
-            <ListItem key={i}>
-              <a href={site.href} target="_blank">
-                {site.name}
-              </a>
-            </ListItem>
+            <Button
+              key={i}
+              onMouseEnter={toggleHover}
+              onMouseLeave={toggleHover}
+            >
+              <span className={hovered ? classes.hide : classes.show}>
+                <a href={site.href} target="_blank">
+                  {site.name}
+                </a>
+              </span>
+
+              <span className={hovered ? classes.show : classes.hide}>
+                <i className={site.hoverIcon}>
+                  <a href={site.href} target="_blank"></a>
+                </i>
+              </span>
+            </Button>
           );
         })}
       </List>
