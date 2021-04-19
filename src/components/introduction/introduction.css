@@ -1,3 +1,27 @@
 .introduction-text {
   margin-bottom: 0;
 }
+
+@media only screen and (max-width: 600px) {
+  .root {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .introduction-text {
+    align-self: center;
+    width: 75vw;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}

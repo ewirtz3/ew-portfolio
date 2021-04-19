@@ -2,6 +2,7 @@ import React from "react";
 import "./introduction.css";
 import { makeStyles } from "@material-ui/core/styles";
 import profilePic from "./oslPic.png";
+import "./introduction.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,14 +41,14 @@ export default function Introduction() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root + " root"}>
       <div className={classes.image}>
         <img src={profilePic} alt="emily wirtz" className={classes.large} />
         <p className={classes.title}>
           Traveler, puzzle builder, Spotify playlist maker
         </p>
       </div>
-      <div className={classes.text}>
+      <div className={classes.text + " text"}>
         <p className="introduction-text">
           Hey I'm Emily! I'm from Kansas City, Missouri, though I've also lived
           in Omaha, Costa Rica, and San Francisco. I have a B.A. in Spanish and
