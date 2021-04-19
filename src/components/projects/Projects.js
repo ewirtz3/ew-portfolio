@@ -17,6 +17,7 @@ import burgerPic from "./burger.jpg";
 import directoryPic from "./userDirectory.jpg";
 import projectYou from "./projectYou.jpg";
 import jobSpot from "./jobSpotScreenShot.png";
+import "./projects.css";
 
 const useStyles = makeStyles({
   root: {
@@ -25,7 +26,7 @@ const useStyles = makeStyles({
     paddingBottom: "160px",
     display: "flex",
     flexFlow: "column wrap",
-    justifyContent: "center",
+    alignContent: "center",
   },
   card: {
     maxWidth: 345,
@@ -44,7 +45,7 @@ const useStyles = makeStyles({
     fontFamily: ["Ubuntu", "sans-serif"],
   },
   grid: {
-    margin: "15px auto",
+    margin: "15px 15px",
   },
 });
 

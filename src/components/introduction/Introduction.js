@@ -6,9 +6,9 @@ import "./introduction.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
-    flexDirectin: "row",
-    justifyContent: "center",
+    // display: "flex",
+    // flexDirection: "row",
+    // justifyContent: "center",
     "& > *": {
       margin: theme.spacing(1),
     },
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     flexWrap: "wrap",
-    justifyContent: "center",
+    alignItems: "center",
     textAlign: "center",
   },
 }));
