@@ -1,50 +1,41 @@
 import React, { useState } from "react";
 import {
-  Card,
-  CardContent,
-  CardActions,
-  IconButton,
-  CardHeader,
-  List,
-  ListItem,
-  Icon,
-  ListItemText,
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Typography,
   Chip,
   makeStyles,
-  Collapse,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import clsx from "clsx";
+import "./resumeAccordion.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    width: "75vw",
+  },
+  display: {
     display: "flex",
-    justifyContent: "center",
-    flexWrap: "wrap",
-    "& > *": {
-      margin: theme.spacing(0.5),
-    },
+    flexWrap: "row wrap",
   },
-  expand: {
-    transform: "rotate(0deg)",
-    marginLeft: "auto",
-    transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest,
-    }),
+  heading: {
+    fontSize: theme.typography.pxToRem(25),
+    flexBasis: "33.33%",
+    flexShrink: 0,
   },
-  expandOpen: {
-    transform: "rotate(180deg)",
+  secondaryHeading: {
+    fontSize: theme.typography.pxToRem(20),
+    color: theme.palette.text.secondary,
   },
 }));
 
-export default function Resume() {
+export default function ResumeAccordion() {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
 
-  const handleExpandClick = (panel) => {
-    console.log(panel["panelLabel"]);
-    console.log(expanded);
-    setExpanded(!expanded);
+  const handleExpandClick = (panel) => (event, isExpanded) => {
+    console.log(panel);
+    setExpanded(isExpanded ? panel : false);
   };
 
   const resume = [
@@ -94,55 +85,38 @@ export default function Resume() {
   ];
 
   return (
-    <>
+    <div className={classes.root}>
       {resume.map((role, i) => {
         const panelLabel = role.panel;
         return (
-          <div className="timeline-entry" key={i}>
-            <Card className="role-card" variant="outlined">
-              <CardHeader title={role.title} subheader={role.company} />
-              <CardActions disableSpacing>
-                <IconButton
-                  className={clsx(classes.expand, {
-                    [classes.expandOpen]: expanded,
-                  })}
-                  onClick={() => handleExpandClick({ panelLabel })}
-                  value={panelLabel}
-                  aria-expanded={expanded}
-                  aria-label="show more"
-                >
-                  <ExpandMoreIcon />
-                </IconButton>
-              </CardActions>
-              <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                  {role.dates}
-                  <br />
-                  {role.location}
-                  <br />
-                  <div className="role-description">
-                    <List>
-                      {role.responsibilities.map((duty, j) => {
-                        return (
-                          <ListItem key={j}>
-                            <Icon className="fas fa-angle-right" />
-                            <ListItemText primary={duty} />
-                          </ListItem>
-                        );
-                      })}
-                    </List>
-                  </div>
-                  <div className={classes.root}>
-                    {role.skills.map((skill, k) => {
-                      return <Chip size="small" label={skill} key={k} />;
-                    })}
-                  </div>
-                </CardContent>
-              </Collapse>
-            </Card>
-          </div>
+          <Accordion
+            key={i}
+            value={role.panel}
+            expanded={expanded === panelLabel}
+            onChange={handleExpandClick(panelLabel)}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls={role.panel + "bh-content"}
+              id={role.panel + "bh-header"}
+              className={classes.display}
+            >
+              <Typography className={classes.heading}>{role.title}</Typography>
+              <Typography className={classes.secondaryHeading}>
+                {role.company}
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              {role.responsibilities.map((duty, j) => {
+                return <Typography key={j}>{duty}</Typography>;
+              })}
+              {role.skills.map((skill, k) => {
+                return <Chip size="small" label={skill} key={k} />;
+              })}
+            </AccordionDetails>
+          </Accordion>
         );
       })}
-    </>
+    </div>
   );
 }

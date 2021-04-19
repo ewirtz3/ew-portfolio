@@ -1,10 +1,11 @@
 import React from "react";
 import MuiThemeProvider from "@material-ui/styles/ThemeProvider/ThemeProvider";
 import { createMuiTheme } from "@material-ui/core/styles";
-import HeaderComponent from "./components/header/HeaderComponent";
+import Header from "./components/header/Header";
 import Introduction from "./components/introduction/Introduction";
 import WorkExperience from "./components/experience/WorkExperience";
 import Projects from "./components/projects/Projects";
+import Footer from "./components/footer/Footer";
 import "./App.css";
 
 const theme = createMuiTheme({
@@ -28,23 +29,28 @@ export default function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <div className="app">
-        <div className="section header-section">
+        <div className="section header-section" id="TOP">
           <div className="section-container header-component">
-            <HeaderComponent />
+            <Header />
           </div>
         </div>
-        <div className="section tinted">
+        <div className="section tinted" id="INTRO">
           <div className="section-container">
             <Introduction />
           </div>
         </div>
-        <div className="section tinted2">
+        <div className="section tinted2" id="CV">
           <div className="section-container">
             <WorkExperience />
           </div>
         </div>
-        <div className="section header-section">
+        <div className="section header-section" id="PROJECTS">
           <Projects />
+        </div>
+        <div className="section tinted2" id="FOOTER">
+          <div className="section-container">
+            <Footer />
+          </div>
         </div>
       </div>
     </MuiThemeProvider>

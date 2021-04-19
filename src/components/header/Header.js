@@ -5,7 +5,7 @@ import regeneratorRuntime from "regenerator-runtime";
 import "./header.css";
 const scrollTo = require("scroll-to");
 
-class HeaderComponent extends Component {
+class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,4 +59,4 @@ class HeaderComponent extends Component {
   }
 }
 
-export default HeaderComponent;
+export default Header;
