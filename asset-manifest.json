@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.eb7cc679.chunk.css",
+    "main.js": "/static/js/main.d17a7e0e.chunk.js",
+    "main.js.map": "/static/js/main.d17a7e0e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.80174a6f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.80174a6f.js.map",
+    "static/js/2.235b0133.chunk.js": "/static/js/2.235b0133.chunk.js",
+    "static/js/2.235b0133.chunk.js.map": "/static/js/2.235b0133.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.eb7cc679.chunk.css.map": "/static/css/main.eb7cc679.chunk.css.map",
+    "static/js/2.235b0133.chunk.js.LICENSE.txt": "/static/js/2.235b0133.chunk.js.LICENSE.txt",
+    "static/media/EmilyWirtz_04102021.16790088.pdf": "/static/media/EmilyWirtz_04102021.16790088.pdf",
+    "static/media/burger.8a93eed7.jpg": "/static/media/burger.8a93eed7.jpg",
+    "static/media/inOrOut.8e1f4610.jpg": "/static/media/inOrOut.8e1f4610.jpg",
+    "static/media/jobSpotScreenShot.eef7f8e1.png": "/static/media/jobSpotScreenShot.eef7f8e1.png",
+    "static/media/oslPic.9986f089.png": "/static/media/oslPic.9986f089.png",
+    "static/media/projectYou.e19730db.jpg": "/static/media/projectYou.e19730db.jpg",
+    "static/media/userDirectory.d90cc25a.jpg": "/static/media/userDirectory.d90cc25a.jpg",
+    "static/media/weatherDashPic.295f6edd.jpg": "/static/media/weatherDashPic.295f6edd.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.80174a6f.js",
+    "static/js/2.235b0133.chunk.js",
+    "static/css/main.eb7cc679.chunk.css",
+    "static/js/main.d17a7e0e.chunk.js"
+  ]
+}
