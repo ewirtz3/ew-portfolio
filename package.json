@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "react and material ui single page portfolio",
   "main": "index.js",
+  "homepage": "https://ewirtz3.github.io/ew-portfolio/",
   "scripts": {
     "create": "webpack",
     "start": "webpack-dev-server --open",
