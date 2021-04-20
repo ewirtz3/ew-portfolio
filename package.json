@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "react and material ui single page portfolio",
   "main": "index.js",
-  "homepage": "https://ewirtz3.github.io/ew-portfolio/",
+  "homepage": "http://ewirtz3.github.io/ew-portfolio",
   "scripts": {
     "create": "webpack",
     "start": "webpack-dev-server --open",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ewirtz3/ew-portfolio.git"
   },
   "keywords": [],
   "author": "emily wirtz",
