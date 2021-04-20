@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "react and material ui single page portfolio",
   "main": "index.js",
-  "homepage": "http://ewirtz3.github.io/ew-portfolio",
+  "homepage": "https://modest-hypatia-20303f.netlify.app/",
   "scripts": {
     "create": "webpack",
     "start": "webpack-dev-server --open",
